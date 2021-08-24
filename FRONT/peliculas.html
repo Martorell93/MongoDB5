@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB - Profesionales</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prueba.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main id="grid">
+        <header class="app_bar display_row_space">
+            <img src="../ASSETS/logo.png">
+            <h1>Películas</h1>
+            <section class= "display_row_center">
+                <form class="container-center">
+                    <label>Usuario: </label>
+                    <input type="text">
+                    <label>Password: </label>
+                    <input type="password">
+                </form>
+                <a class="link">Registrarse</a>
+            </section>
+        </header>
+        <aside class="aside">
+            <nav class="display_column_space" id="nav">
+                <li class="btn container-center" id="n1"><a href=""><img src="../ASSETS/home.png"><span> Home</span></a></li>
+                <li class="btn container-center" id="n2"><a href="./profesionales.html"><img src="../ASSETS/director-chair.png"><span> Profesionales</span></a></li>
+                <li class="btn container-center point" id="n3"><a href="#"><img src="../ASSETS/clapperboard (1).png"><span> Películas</span></a></li>
+                <li class="btn container-center" id="n3"><a href="https://www.google.es/" target="_blank"><img src="../ASSETS/loupe.png"><span> Buscar</span></a></li>
+            </nav>
+        </aside>
+        <section class="body grid_secundario" id = "todo">
+            <article class="grid_top_left box_center_rounded">
+                <div class="info box_center_rounded">
+                    <h4>Leyenda: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Título: </span>Título de la película</li>
+                        <li><span>Fecha de lanzamiento: </span>Año de lanzamiento de la película</li>
+                        <li><span>Nacionalidad: </span>Nacionalidad de la película</li>
+                        <li><span>Género: </span>Género de la película, no puede tener más de uno. Debe ser: fantasía, comedia, acción, drama o romantico</li>
+                        <li><span>Id Película: </span>Id de la película en la BBDD</li>
+                        <li><span>Id Actores: </span>Id de los actores en la BBDD que trabajaron en la película</li>
+                        <li><span>Id Guionistas: </span>Id de los guionistas en la BBDD que trabajaron en la película</li>
+                        <li><span>Id Directores: </span>Id de los directores en la BBDD que trabajaron en la película</li>
+                    </ul>
+                </div>
+                <div class ="info box_center_rounded">
+                    <h4>Botones: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Mostrar: </span>Muestra la lista de películas, en caso de poner id: </li>
+                            <ul class="bullet_list2">
+                                <li>Película: Muestra la información de la película con dicho id</li>
+                                <li>Actores / Guionistas / Directores: Muestra la información de los actores/guionistas/directores que participarón en la película</li>
+                            </ul>
+                        <li><span>Crear: </span></li>
+                            <ul class="bullet_list2">
+                                <li>Película: Crea una película con los campos rellenos excepto el id</li>
+                                <li>Actor / Guionista / Director: Crea un actor/guionista/director que participó en la película</li>
+                            </ul>
+                        <li><span>Actualizar: </span>Identificar id, se modifica la información de la película (id)</li>
+                        <li><span>Eliminar: </span></li>
+                            <ul class="bullet_list2">
+                                <li>Película: Poniendo el id, se elimina la película en la BBDD</li>
+                                <li>Actores / Guionistas / Directores: Poniendo el id de la película y el suyo (actor, guionista, director) se elimina dicho personaje de la información de la película</li>
+                            </ul>
+                    </ul>
+                </div>
+            </article>
+            <form class="grid_top_rigth box_center_rounded display_column_space" id="prueba">
+                <div class= "display_row_center box_center_rounded" id="datos">
+                    <label class= "etiqueta" for="Titulo">Titulo: 
+                        <input  class= "input" type="text" id="titulo">
+                    </label>
+                    <label class= "etiqueta" for="anoLanzamiento">Fecha lanzamiento:
+                        <input class= "input" type="text" id="anoLanzamiento">
+                    </label>
+                    <label  class= "etiqueta" for="nacionalidad">Nacionalidad: 
+                        <input class= "input" type="text" id="nacionalidad">
+                    </label>
+                    <label  class= "etiqueta" for="genero">Género: 
+                        <input class= "input" type="text" id="genero">
+                    </label>
+                    <label class= "etiqueta" for="id">Id Película:
+                        <input class= "input" type="text" id="id">
+                    </label>
+                    <label class= "etiqueta" for="actores">Id Actores: 
+                        <input class= "input" type="text" id="actores">
+                    </label>
+                    <label class= "etiqueta" for="guionistas">Id Guionistas: 
+                        <input class= "input" type="text" id="guionistas">
+                    </label>
+                    <label class= "etiqueta" for="directores">Id Directores: 
+                        <input class= "input" type="text" id="directores">
+                    </label>
+                </div>
+                <div class= "display_row_center box_center_rounded" id="datos2">
+                    <label class= "etiqueta" for="nombre">Nombre: 
+                        <input  class= "input" type="text" id="nombre">
+                    </label>
+                    <label class= "etiqueta" for="apellidos">Apellidos: 
+                        <input class= "input" type="text" id="apellidos">
+                    </label>
+                    <label  class= "etiqueta" for="edad">Edad: 
+                        <input class= "input" type="text" id="edad">
+                    </label>
+                    <label  class= "etiqueta" for="genero2">Género:
+                        <input class= "input" type="text" id="genero2">
+                    </label>
+                    <label class= "etiqueta" for="id2">Id Película:
+                        <input class= "input" type="text" id="id2">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="profes" id="peli" value="pelicula" onclick="radioButton()">
+                    <label for="html">Pelicula</label>
+                    <input type="radio" id="actor" name="profes" value="actor" onclick="radioButton()">
+                    <label for="actor">Actores</label>
+                    <input type="radio" id="guionista" name="profes" value="guionista" onclick="radioButton()">
+                    <label for="guionista">Guionistas</label>
+                    <input type="radio" id="director" name="profes" value="director" onclick="radioButton()">
+                    <label for="director">Directores</label>
+                </div>
+                <div class ="display_row_space fixed">
+                    <button class="boton" type="button" onclick="getInfo()">Mostrar</button>
+                    <button class="boton" type="button" onclick="postInfo()">Crear</button>
+                    <button class="boton" type="button" onclick="putPeli()">Actualizar</button>
+                    <button class="boton" type="button" onclick="deleteInfo()">Eliminar</button>
+                </div>
+            </form>
+            <article class= "grid_low box_center_rounded">
+                <div id="info"></div>
+                <button class= "boton space" type ="button" onclick="eliminarInfo()">Eliminar Información</button>
+            </article>
+        </section>
+    </main>
+    <script src="controladorAPI.js"></script>
+    </body>
+</html>

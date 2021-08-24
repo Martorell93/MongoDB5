@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB - Profesionales</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prueba.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main id="grid">
+        <header class="app_bar display_row_space">
+            <img src="../ASSETS/logo.png">
+            <h1>Profesionales</h1>
+            <section class= "display_row_center">
+                <form class="container-center">
+                    <label>Usuario: </label>
+                    <input type="text">
+                    <label>Password: </label>
+                    <input type="password">
+                </form>
+                <p><a>Registrarse</a></p>
+            </section>
+        </header>
+        <aside class="aside">
+            <nav class="display_column_space" id="nav">
+                <li class="btn container-center" id="n1"><a href="#"><img src="../ASSETS/home.png"><span> Home</span></a></li>
+                <li class="btn container-center point" id="n2"><a href=""><img src="../ASSETS/director-chair.png"><span> Profesionales</span></a></li>
+                <li class="btn container-center" id="n3"><a href=""><img src="../ASSETS/clapperboard (1).png"><span> Películas</span></a></li>
+                <li class="btn container-center" id="n3"><a href=""><img src="../ASSETS/loupe.png"><span> Buscar</span></a></li>
+            </nav>
+        </aside>
+        <section class="body grid_secundario" id = "todo">
+            <article class="grid_top_left box_center_rounded">
+                <div class="info box_center_rounded">
+                    <h4>Leyenda: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Nombre: </span>nombre del alumno</li>
+                        <li><span>Apellidos: </span>apellidos del alumno</li>
+                        <li><span>Año de entrada: </span>año de entrada al curso</li>
+                        <li><span>Id: </span>id de alumno en la BBDD</li>
+                    </ul>
+                </div>
+                <div class ="info box_center_rounded">
+                    <h4>Botones: </h4>
+                    <ul class="bullet_list">
+                        <li><span>Mostrar: </span>Muestra la lista de alumnos, en caso de poner id muestra el alumno con dicho id</li>
+                        <li><span>Crear: </span>Crea un alumno con los campos rellenos, excepto el id</li>
+                        <li><span>Actualizar: </span>Identificar id, se modifica la información del alumno (id)</li>
+                        <li><span>Eliminar: </span>Poniendo el id, se elimina la información del alumno (id)</li>
+                    </ul>
+                </div>
+            </article>
+            <form class="grid_top_rigth box_center_rounded display_column_space" id="prueba">
+                <div class= "display_row_center box_center_rounded fixed" id="datos">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="nombre">Nombre: </label>
+                    <input  class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="nombre">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="apellidos">Apellidos: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="apellidos">
+                    <label  class= "shadow-lg p-3 mb-5 bg-body rounded" for="edad">Edad: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="edad">
+                    <label  class= "shadow-lg p-3 mb-5 bg-body rounded" for="genero">Género: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="genero">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="profesion">Profesión: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="profesion">
+                    <label class= "shadow-lg p-3 mb-5 bg-body rounded" for="id">Id: </label>
+                    <input class= "shadow-lg p-3 mb-5 bg-body rounded" type="text" id="id">
+                </div>
+                <div class ="display_row_space fixed">
+                    <button class="shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="getPro()">Mostrar</button>
+                    <button class="shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="postPro()">Crear</button>
+                    <button class="shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="putPro()">Actualizar</button>
+                    <button class="shadow-lg p-3 mb-5 bg-body rounded" type="button" onclick="deletePro()">Eliminar</button>
+                </div>
+            </form>
+            <article class= "grid_low box_center_rounded" id="info">
+                <table class="table table-dark table-striped box_center_rounded" id="tabla">                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Profesión</th>
+                      </tr>
+                    </thead>
+                </table>
+                <button class= "shadow-lg p-3 mb-5 bg-body rounded" type ="button" onclick="eliminarInfo()">Eliminar Información</button>
+            </article>
+        </section>
+    </main>
+    <script src="controladorAPI.js"></script>
+    </body>
+</html>

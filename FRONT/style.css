@@ -1,0 +1,99 @@
+/* ----- External imports -----  */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap');
+
+
+/* ----- Declarations ----- */
+:root {
+    --color_black: 0, 0, 0;
+    --color_white: 255, 255, 255;
+    --primary_color: 48, 50, 61;
+    --secundary_color: 217, 3, 104;
+    --third_color: 234, 222, 218;
+    --header_height: 72px;
+    --body_height: calc(100vh - var(--header_height));
+    --aside_width: 72px;
+    --aside_width__expanded: 180px;
+    --border_radius-s: 3px;
+    --border_radius-m: 7px;
+    --border_radius-l: 11px;
+    --border_radius-xl: 16px;
+    --font_size: 11px;
+    --margin_body: 32px;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header_height: 60px;
+    }
+}
+@media screen and (max-width: 475px) {
+    :root {
+        --header_height: 60px;
+    }
+}
+
+/* ----- Cleaners ------ */
+* {
+    font-family: 'Chakra Petch', arial;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-style: normal;
+    color: rgb(var(--color_black));
+    font-size: var(--font_size);
+    font-weight: 300;
+    background: transparent;
+    /* list-style-type: none; */
+    cursor: default;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* ----- Defaults ----- */
+p, a, li, span, h1, h2, h3, h4, h5, h6, address {
+    font-size: 1.6rem;
+}
+@media screen and (max-width: 768px) {
+    p, a, li, span, h1, h2, h3, h4, h5, h6, address {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 475px) {
+    p, a, li, span, h1, h2, h3, h4, h5, h6, address {
+        font-size: 1.2rem;
+    }
+}
+body {
+    background-color: rgb(var(--third_color));
+}
+
+/* ----- Containers ----- */
+[class*="container"] {
+    display: flex;
+    flex-direction: row;
+}
+[class*="container-center"] {
+    align-items: center;
+    justify-content: center;
+}
+[class*="container-evenly"] {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* ----- Designs ----- */
+[class*="btn"] {
+    padding: 7px;
+    margin: 0 9px;
+    border-radius: var(--border_radius-s);
+    cursor: pointer;
+    background-color: rgba(var(--third_color), 0);
+    transition: background-color .35s ease-in-out;
+}
+
+[class*="btn"]:hover {
+    background-color: rgba(var(--third_color), 0.3);
+    transition: background-color .35s ease-in-out;
+}
