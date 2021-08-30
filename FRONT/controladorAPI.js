@@ -28,18 +28,64 @@ class Pelicula {
 
 //Llamada Profesionales a la API método GET
 async function getPro() {
-    if (document.getElementById("cuerpo")) {
-        document.getElementById("cuerpo").remove();
+    // if (document.getElementById("cuerpo")) {
+    //     document.getElementById("cuerpo").remove();
+    // }
+    // //Coger id del elemento
+    // let id = document.getElementById("id").value;
+
+    // //Crear el cuerpo de la tabla
+    // let cuerpo = document.createElement("tbody");
+    // cuerpo.setAttribute("id", "cuerpo");
+    // let posicion = document.getElementById("tabla");
+    // posicion.appendChild(cuerpo);
+    
+    if (document.getElementById("tabla")) {
+        document.getElementById("tabla").remove();
     }
     //Coger id del elemento
     let id = document.getElementById("id").value;
 
     //Crear el cuerpo de la tabla
-    let cuerpo = document.createElement("tbody");
-    cuerpo.setAttribute("id", "cuerpo");
-    let posicion = document.getElementById("tabla");
+    let cuerpo = document.createElement("table");
+    cuerpo.setAttribute("class", "space")
+    cuerpo.setAttribute("id", "tabla");
+    let posicion = document.getElementById("info");
     posicion.appendChild(cuerpo);
-    
+    let cuerpo2 = document.createElement("thead");
+    let cuerpo3 = document.createElement("tr");
+    cuerpo.appendChild(cuerpo2);
+    cuerpo2.appendChild(cuerpo3);
+    let header1 = document.createElement('th');
+    header1.setAttribute("scope", "col");
+    header1.textContent = "id";
+    let header2 = document.createElement('th');
+    header2.setAttribute("scope", "col");
+    header2.textContent = "Nombre";
+    let header3 = document.createElement('th');
+    header3.setAttribute("scope", "col");
+    header3.textContent = "Apellidos";
+    let header4 = document.createElement('th');
+    header4.setAttribute("scope", "col");
+    header4.textContent = "Edad";
+    let header5 = document.createElement('th');
+    header5.setAttribute("scope", "col");
+    header5.textContent = "Género";
+    let header6 = document.createElement('th');
+    header6.setAttribute("scope", "col");
+    header6.setAttribute("class", "colum");
+    header6.textContent = "Profesión";
+    cuerpo3.appendChild(header1);
+    cuerpo3.appendChild(header2);
+    cuerpo3.appendChild(header3);
+    cuerpo3.appendChild(header4);
+    cuerpo3.appendChild(header5);
+    cuerpo3.appendChild(header6);
+    let cuerpo4 = document.createElement("tbody");
+    cuerpo4.setAttribute("id", "cuerpo");
+    let posicion2 = document.getElementById("tabla");
+    posicion2.appendChild(cuerpo4);
+
     //Si tiene un id
     if (id) {
         let url = `http://localhost:4000/profesionales?id=${id}`;
@@ -248,7 +294,7 @@ async function getInfo() {
 
         //Crear el cuerpo de la tabla
         let cuerpo = document.createElement("table");
-        // cuerpo.setAttribute("class", "space")
+        cuerpo.setAttribute("class", "space")
         cuerpo.setAttribute("id", "tabla");
         let posicion = document.getElementById("info");
         posicion.appendChild(cuerpo);
@@ -261,15 +307,18 @@ async function getInfo() {
         header1.textContent = "id";
         let header2 = document.createElement('th');
         header2.setAttribute("scope", "col");
+        // header2.setAttribute("class", "colum2");
         header2.textContent = "Titulo";
         let header3 = document.createElement('th');
         header3.setAttribute("scope", "col");
         header3.textContent = "Fecha de lanzamiento";
         let header4 = document.createElement('th');
         header4.setAttribute("scope", "col");
+        header4.setAttribute("class", "colum2");
         header4.textContent = "Nacionalidad";
         let header5 = document.createElement('th');
         header5.setAttribute("scope", "col");
+        header5.setAttribute("class", "colum2");
         header5.textContent = "Género";
         let header6 = document.createElement('th');
         header6.setAttribute("scope", "col");
