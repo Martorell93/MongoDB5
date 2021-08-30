@@ -416,9 +416,13 @@ thead > tr > th {
 }
 
 /* Home */
-.home > a, label, input, button {
+.home > a, .home > form > label, .home > form > input, .home > button {
     color: rgb(var(--secundary_color));
     font-size: 18px;
+}
+
+.home > form > input {
+    border-radius: 4px;
 }
 
 .home > a {
